@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="home.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <title></title>
+</head>
+<body>
+  <div class="container-fluid bg-dark text-white fixed-top">
+    <div class="row pt-2">
+    <p class="col ">phone:+91 480 325 3215</p>
+    <p class="col d-flex flex-row-reverse"><a href="#" class="text-white a1">Email:pethub@gmail.com</a></p>
+  </div>
+  </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-primary mt-5 fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand text-white " href="home.html"><img src="icon2.png" > PET HUB</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item ">
+          <a class="nav-link  " aria-current="page" href="home.html">HOME</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="about.html">ABOUT</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link  " href="service.html">SERVICES</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active text-white" href="#">GALLERY</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link " href="contact.html">CONTACT</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success text-white" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav><br><br><br><br><br><br>
+<div class="container-fluid px-0 ">
+     <img class=" w-100 " src="image_4.jpg" alt="Image" style="height: 40em;"> </div>
+<script
+  src="https://code.jquery.com/jquery-3.6.3.js"
+  integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+  crossorigin="anonymous"></script>
+
+ 
+<script type="text/javascript">
+(function() {
+  "use strict";
+
+  /*
+   * Easy selector helper function
+   */
+  const select = (el, all = false) => {
+    el = el.trim()
+    if (all) {
+      return [...document.querySelectorAll(el)]
+    } else {
+      return document.querySelector(el)
+    }
+  }
+
+  /**
+   * Easy event listener function
+   */
+  const on = (type, el, listener, all = false) => {
+    let selectEl = select(el, all)
+    if (selectEl) {
+      if (all) {
+        selectEl.forEach(e => e.addEventListener(type, listener))
+      } else {
+        selectEl.addEventListener(type, listener)
+      }
+    }
+  }
+   /**
+   * Menu isotope and filter
+   */
+  window.addEventListener('load', () => {
+    let menuContainer = select('.menu-container');
+    if (menuContainer) {
+      let menuIsotope = new Isotope(menuContainer, {
+        itemSelector: '.menu-item',
+        layoutMode: 'fitRows'
+      });
+
+      let menuFilters = select('#menu-flters li', true);
+
+      on('click', '#menu-flters li', function(e) {
+        e.preventDefault();
+        menuFilters.forEach(function(el) {
+          el.classList.remove('filter-active');
+        });
+        this.classList.add('filter-active');
+
+        menuIsotope.arrange({
+          filter: this.getAttribute('data-filter')
+        });
+
+      }, true);
+    }
+
+  });
+})()
+</script>
+
+
+ <!--<div class="section-title">
+          <h2>Check our tasty <span>Menu</span></h2>
+        </div>-->
+<div class="container">
+  <div class="row">
+    <div class="col text-center my-4">
+      <h1 class="fs-2">Gallery</h1>
+      <div class="underline mx-auto mt-3"></div>
+    </div>
+  </div>
+
+        <div class="row" >
+          <div class="col-lg-12 d-flex justify-content-center">
+            
+           <ul id="menu-flters">
+              <li data-filter="*" class="filter-active list btn btn-primary">All</li>
+              <li data-filter=".filter-starters" class="list btn btn-primary">dog</li>
+              <li data-filter=".filter-main " class="list btn btn-primary">cat</li>
+              <li data-filter=".filter-specialty " class="list btn btn-primary">birds</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row menu-container justify-content-center g-4" id="product-list">
+
+          <div class="col-lg-4 menu-item filter-starters"data-aos="zoom-out">
+            <div class="menu-content">
+              <img class="img-fluid" src="carousel1_img3.jpg">
+              <span class="d-block text-uppercase fw-bold">german shepherd</span>
+        <span class="d-block">$ 220.00</span>
+            </div>
+            <!--<div class="menu-ingredients">
+              Crispy fried pastry filled with spiced potatoes and peas.
+            </div>-->
+          </div>
+
+          <div class="col-lg-4 menu-item filter-specialty"data-aos="zoom-out">
+            <div class="menu-content">
+              <img class="img-fluid" src="carousel1_img2.jpg">
+              <span class="d-block text-uppercase fw-bold">parrot</span>
+        <span class="d-block">$ 120.00</span>
+            </div>
+            <!--<div class="menu-ingredients">
+              A breakfast dish of soft, fluffy rice pancakes served with a creamy and mildly spiced beef stew.
+            </div>-->
+          </div>
+
+          <div class="col-lg-4 menu-item filter-starters"data-aos="zoom-out" >
+            <div class="menu-content">
+              <img class="img-fluid" src="carousel1_img4.jpg">
+              <span class="d-block text-uppercase fw-bold">dachhund dogs</span>
+        <span class="d-block">$ 350.00</span>
+            </div>
+            <!--<div class="menu-ingredients">
+              Savory and tangy street food with fried dough wafers, chickpeas, potatoes, yogurt, and chutneys.
+            </div>-->
+          </div>
+
+          <div class="col-lg-4 menu-item filter-main"data-aos="zoom-out" >
+            <div class="menu-content">
+              <img class="img-fluid" src="carousel1_img1.jpg">
+              <span class="d-block text-uppercase fw-bold">brown persian kitten</span>
+        <span class="d-block">$ 120.00</span>
+      
+            </div>
+            <!--<div class="menu-ingredients">
+              A classic Indian dish made with marinated grilled chicken in a creamy tomato sauce with butter and aromatic spices.
+            </div>-->
+          </div>
+
+          <div class="col-lg-4 menu-item filter-main"data-aos="zoom-out">
+            <div class="menu-content">
+              <img class="img-fluid" src="page3_img5.jpg">
+              <span class="d-block text-uppercase fw-bold">british shorthair</span>
+        <span class="d-block">$ 150.00</span>
+            </div>
+            <!--<div class="menu-ingredients">
+              Layered, flaky flatbread served with spicy chicken curry cooked in coconut oil and seasoned with traditional spices.
+            </div>-->
+          </div>
+
+          <div class="col-lg-4 menu-item filter-starters"data-aos="zoom-out" >
+            <div class="menu-content">
+             <img class="img-fluid" src="page2_img3.jpg">
+             <span class="d-block text-uppercase fw-bold">english cocker spaniel</span>
+        <span class="d-block">$ 220.00</span>
+            </div>
+            <!--<div class="menu-ingredients">
+              Grilled marinated chicken with mint chutney and lemon wedges.
+            </div>-->
+          </div>
+
+          <div class="col-lg-4 menu-item filter-main"data-aos="zoom-out" >
+            <div class="menu-content">
+              <img class="img-fluid" src="page1_img4.jpg">
+              <span class="d-block text-uppercase fw-bold">tabby cat</span>
+        <span class="d-block">$ 150.00</span>
+      
+            </div>
+            <!--<div class="menu-ingredients">
+              A fragrant rice dish made with a mix of spices, Chicken, and basmati rice, often served with raita and papadums.
+            </div>-->
+          </div>
+
+          <div class="col-lg-4 menu-item filter-main"data-aos="zoom-out" >
+            <div class="menu-content">
+             <img class="img-fluid" src="carousel1_img5.jpg">
+             <span class="d-block text-uppercase fw-bold">american bobtail</span>
+        <span class="d-block">$ 190.00</span>
+     
+            </div>
+            <!--<div class="menu-ingredients">
+              Steamed cylinders of ground rice and coconut served with mildly spiced curry of black chickpeas.
+            </div>-->
+          </div>
+          <div class="col-lg-4 menu-item filter-starters"data-aos="zoom-out" >
+            <div class="menu-content">
+             <img class="img-fluid" src="page3_img2.jpg">
+              <span class="d-block text-uppercase fw-bold">jack russell terrier</span>
+        <span class="d-block">$ 180.00</span>
+
+            </div>
+            <!--<div class="menu-ingredients">
+              Grilled marinated chicken with mint chutney and lemon wedges.
+            </div>-->
+          </div>
+
+
+          <div class="col-lg-4 menu-item filter-specialty"data-aos="zoom-out">
+            <div class="menu-content">
+              <img class="img-fluid" src="page2_img5.jpg">
+               <span class="d-block text-uppercase fw-bold">scottish fold</span>
+        <span class="d-block">$ 120.00</span>
+            </div>
+            <!--<div class="menu-ingredients">
+             Rice and includes dishes such as sambar, rasam, avial, thoran, pachadi, parippu curry, moru curry, payasam, and papadum
+            </div>-->
+          </div>
+
+        </div>
+
+      </div>
+      
+    </section>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+<!-- or -->
+<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+<div class="container-fluid bg-dark text-white mt-5 py-5 px-sm-3 px-md-5">
+        <div class="row pt-5">
+            <div class="col-lg-4 col-md-12 mb-5">
+                <h1 class="mb-3 display-5 text-capitalize text-white"><span class="text-primary">Pet</span>Hub</h1>
+                <p class="m-0">Ipsum amet sed vero et lorem stet eos ut, labore sed sed stet sea est ipsum ut. Volup amet ea sanct ipsum, dolore vero lorem no duo eirmod. Eirmod amet .</p>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-primary mb-4">Get In Touch</h5>
+                        <p><i class="fa fa-map-marker-alt mr-2"></i>123 Street, New York, USA</p>
+                        <p><i class="fa fa-phone-alt mr-2"></i>+91 480 325 3215</p>
+                        <p><i class="fa fa-envelope mr-2"></i>pethub@example.com</p>
+                        <div class="d-flex justify-content-start mt-4">
+                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a class="btn btn-outline-light rounded-circle text-center mr-2 px-0" style="width: 36px; height: 36px;" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-primary mb-4">Popular Links</h5>
+                        <div class="d-flex flex-column justify-content-start">
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>About Us</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Services</a>
+                            <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Team</a>
+                            <a class="text-white" href="#"><i class="fa fa-angle-right mr-2"></i>Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-primary mb-4">Newsletter</h5>
+                        <form action="">
+                            <div class="form-group">
+                                <input type="text" class="form-control border-0" placeholder="Your Name" required="required" />
+                            </div>
+                            <br>
+                            <div class="form-group">
+                                <input type="email" class="form-control border-0" placeholder="Your Email" required="required" />
+                            </div>
+                            <br>
+                            <div>
+                                <button class="btn btn-lg btn-success btn-block border-0" type="submit">Submit Now</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-white py-4 px-sm-3 px-md-5" style="background: #111111;">
+        <div class="row">
+            <div class="col-md-6 text-center text-md-left mb-3 mb-md-0">
+                <p class="m-0 text-white">
+                    &copy; <a class="text-white font-weight-bold" href="#">pethub@gmail.com</a>
+                </p>
+            </div>
+            <div class="col-md-6 text-center text-md-right">
+                <ul class="nav d-inline-flex">
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">Terms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">FAQs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white py-0" href="#">Help</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+  AOS.init();
+</script>
+
+
+</body>
+</html>
